@@ -26,9 +26,18 @@ namespace OnlineShopping.Controllers
         [HttpPost]
 		public IActionResult Create(Category objCategory)
 		{
-            _db.Categories.Add(objCategory);
-            _db.SaveChanges();
-			return View();
+            if(objCategory.Name == objCategory.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("Name","Name and display order cannot be same");
+            }
+            if(ModelState.IsValid)
+            {
+				_db.Categories.Add(objCategory);
+				_db.SaveChanges();
+				return RedirectToAction("Index");
+			}
+            return View();
+         
 		}
 
 

@@ -135,3 +135,4 @@ D:\project folder\OnlineShopping_MVCcoreEntity\OnlineShopping_MVCcoreEntity\obj\
 D:\project folder\OnlineShopping_MVCcoreEntity\OnlineShopping_MVCcoreEntity\obj\Debug\net8.0\OnlineShopping.genruntimeconfig.cache
 D:\project folder\OnlineShopping_MVCcoreEntity\OnlineShopping_MVCcoreEntity\obj\Debug\net8.0\ref\OnlineShopping.dll
 D:\project folder\OnlineShopping_MVCcoreEntity\OnlineShopping_MVCcoreEntity\bin\Debug\net8.0\System.Text.Json.dll
+D:\project folder\OnlineShopping_MVCcoreEntity\OnlineShopping_MVCcoreEntity\obj\Debug\net8.0\OnlineShopping.sourcelink.json
