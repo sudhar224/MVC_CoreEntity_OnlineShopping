@@ -1,0 +1,43 @@
+﻿@using OnlineShopping.Models
+@model Category
+
+<div class="">
+	<form method="post">
+		<input asp-for="Id" hidden />
+		<div class="row pb-2">
+			<div class="col-12">
+				<h2>Create Category</h2>
+				<div asp-validation-summary="All" class="text-danger"></div>
+			</div>
+		</div>
+		<div class="row pb-2">
+			<div class="col-12">
+				<label asp-for="Name"></label>
+				<input asp-for="Name" disabled class="form-control" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="row pb-2">
+			<div class="col-12">
+				<label asp-for="DisplayOrder"></label>
+				<input asp-for="DisplayOrder" disabled class="form-control"/>
+				<span asp-validation-for="DisplayOrder" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<button class="btn btn-primary form-control">Delete</button>
+			</div>
+			<div class="col-6">
+				<a asp-controller="Category" asp-action="Index" class="btn btn-secondary form-control">Back to list</a>
+			</div>
+		</div>
+
+	</form>
+
+</div>
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

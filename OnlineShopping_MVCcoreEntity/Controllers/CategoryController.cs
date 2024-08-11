@@ -40,7 +40,62 @@ namespace OnlineShopping.Controllers
          
 		}
 
+      
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Category? catagoryFromDb = _db.Categories.Find (id);
+            Category? catagoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
+            Category? catagoryFromDb2 = _db.Categories.Where(u => u.Id== id).FirstOrDefault();
 
+			if (catagoryFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(catagoryFromDb);
+        }
+        [HttpPost]
+        public IActionResult Edit(Category objCategory)
+        {
+            if(ModelState.IsValid)
+            {
+				_db.Categories.Update(objCategory);
+                _db.SaveChanges();
+			} 
+            return RedirectToAction("Index");
+        }
 
-	}
+        public IActionResult Delete(int id)
+        {
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+             Category catagoryFromDb = _db.Categories.Find(id);
+
+            if(catagoryFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(catagoryFromDb);
+            
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePost(int id)
+        {
+            Category catagoryFromDb =_db.Categories.Find(id);
+            if(catagoryFromDb == null)
+            {
+                return NotFound();
+            }
+            _db.Categories.Remove(catagoryFromDb);
+            _db.SaveChanges();
+			return RedirectToAction("Index");
+        }
+
+    }
 }
