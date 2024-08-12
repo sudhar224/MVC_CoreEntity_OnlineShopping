@@ -34,7 +34,9 @@ namespace OnlineShopping.Controllers
             {
 				_db.Categories.Add(objCategory);
 				_db.SaveChanges();
+				TempData["Success"] = ("Category Created Successfully");
 				return RedirectToAction("Index");
+                
 			}
             return View();
          
@@ -48,15 +50,15 @@ namespace OnlineShopping.Controllers
             {
                 return NotFound();
             }
-            Category? catagoryFromDb = _db.Categories.Find (id);
-            Category? catagoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
-            Category? catagoryFromDb2 = _db.Categories.Where(u => u.Id== id).FirstOrDefault();
+            //Category? catagoryFromDb = _db.Categories.Find (id);
+            Category? catagoryFromDb1 = _db.Categories.FirstOrDefault( Categories => Categories.Id == id);
+            //Category? catagoryFromDb2 = _db.Categories.Where(u => u.Id== id).FirstOrDefault();
 
-			if (catagoryFromDb == null)
+			if (catagoryFromDb1 == null)
             {
                 return NotFound();
             }
-            return View(catagoryFromDb);
+            return View(catagoryFromDb1);
         }
         [HttpPost]
         public IActionResult Edit(Category objCategory)
@@ -65,6 +67,7 @@ namespace OnlineShopping.Controllers
             {
 				_db.Categories.Update(objCategory);
                 _db.SaveChanges();
+				TempData["Success"] = ("Category Updated Successfully");
 			} 
             return RedirectToAction("Index");
         }
@@ -94,8 +97,10 @@ namespace OnlineShopping.Controllers
             }
             _db.Categories.Remove(catagoryFromDb);
             _db.SaveChanges();
+			TempData["Success"] = ("Category Deleted Successfully");
 			return RedirectToAction("Index");
-        }
+			
+		}
 
     }
 }
