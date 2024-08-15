@@ -1,0 +1,35 @@
+﻿@using OnlineShopping.Models
+@model Product
+<div class="container">
+	<div class="row">
+		<h2>Create Product</h2>
+		<form method="post">
+			<div class="col-12">
+				<label asp-for="ProductName"></label>
+				<input type="text" asp-for="ProductName" class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="ProductDescription"></label>
+				<input type="text" asp-for="ProductDescription" class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="ProductCategoryId"></label>
+				<input type="text" asp-for="ProductCategoryId" class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="ProductPrice"></label>
+				<input type="text" asp-for="ProductPrice" class="form-control" />
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<button class="btn btn-primary mt-2 form-control">Create</button>
+				</div>
+				<div class="col-6">
+					<a asp-action="Index" asp-controller="Product" class="btn btn-secondary form-control mt-2">Back to List</a>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+
+</div>

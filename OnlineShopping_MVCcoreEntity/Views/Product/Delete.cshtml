@@ -1,0 +1,37 @@
+﻿@using OnlineShopping.Models
+@model Product
+<div class="container">
+	<div class="row">
+		<h2>Delete Product</h2>
+		<form method="post">
+			<input asp-for="Id" hidden />
+			<div class="col-12">
+				<label asp-for="ProductName"></label>
+				<input type="text" asp-for="ProductName" disabled class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="ProductDescription"></label>
+				<input type="text" asp-for="ProductDescription" disabled class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="ProductCategoryId"></label>
+				<input type="text" asp-for="ProductCategoryId" disabled class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="ProductPrice"></label>
+				<input type="text" asp-for="ProductPrice" disabled class="form-control" />
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<button class="btn btn-primary mt-2 form-control">Delete</button>
+				</div>
+				<div class="col-6">
+					<a asp-action="Index" asp-controller="Product" class="btn btn-secondary form-control mt-2">Back to List</a>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+</div>
+
