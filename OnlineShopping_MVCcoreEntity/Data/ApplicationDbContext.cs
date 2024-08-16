@@ -11,6 +11,7 @@ namespace OnlineShopping.Data
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Register> tbl_register { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
@@ -52,6 +53,19 @@ namespace OnlineShopping.Data
 					ProductCategoryId = 2,
 					ProductPrice = 15000
 				}
+                );
+            modelBuilder.Entity<Register>().HasData(
+                new Register
+                {
+                    Id = 1,
+                    FullName = "sudhar",
+                    Gender = "Male",
+                    DOB = "20-05-2010",
+                    Email ="sudhar@gmail.com",
+                    Phone = "6666667857",
+                    Address = "tirupur"
+               
+                }
                 );
             
         }

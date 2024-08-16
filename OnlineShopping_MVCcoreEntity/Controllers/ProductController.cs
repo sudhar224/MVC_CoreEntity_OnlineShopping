@@ -95,5 +95,11 @@ namespace OnlineShopping.Controllers
 
 			return RedirectToAction("Index");
 		}
+
+		public IActionResult UserProduct()
+		{
+			List<Product> objproduct = _db.Products.ToList();
+			return View(objproduct);
+		}
 	}
 }
