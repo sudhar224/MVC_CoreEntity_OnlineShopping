@@ -27,9 +27,26 @@ namespace OnlineShopping.Controllers
 			{
 				_db.tbl_register.Add(objRegister);
 				_db.SaveChanges();
-				//TempData["success"] = "Successfully Completed Your Registeration";
+				TempData["success"] = "Successfully Completed Your Registeration";
 			}
 			return View();
+		}
+
+		public IActionResult Login()
+		{
+			return View();
+		}
+		[HttpPost]
+		public IActionResult Login(Register objRegister)
+		{			
+			if(ModelState.IsValid)
+			{
+				_db.tbl_register.Where(u => u.Phone == objRegister.Phone && u.Password == objRegister.Password);
+				return RedirectToAction("UserProduct", "Product");				
+			}
+			
+			return View();
+	
 		}
 	}
 }

@@ -1,0 +1,45 @@
+﻿@using OnlineShopping.Models
+@model Register
+<div class="container">
+	<div class="row">
+		<h2>Login Page</h2>
+		<partial name="_Notification" />
+		<div>
+		</div>
+		<form method="post">
+			<div class="row">
+				<div class="row">
+					<div class="col-6">
+						<label asp-for="Phone"></label>
+						<input asp-for="Phone" class="form-control" placeholder="Enter your PhoneNumber" />
+						<span asp-validation-for="Phone" class="text-danger"></span>
+					</div>
+				</div>
+			
+				<div class="row">
+					<div class="col-6">
+						<label asp-for="Password"></label>
+						<input asp-for="Password" class="form-control" placeholder="Enter your Password" />
+						<span asp-validation-for="Password" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<button class="btn btn-primary form-control mt-2">Login</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6 mt-2">
+						<a asp-action="Create" asp-controller="Register">SignUp</a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
+

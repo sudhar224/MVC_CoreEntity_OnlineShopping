@@ -1,0 +1,42 @@
+﻿@using OnlineShopping.Models
+@model Employee
+
+<div class="container">
+	<div class="row">
+		<h2>Delete Employee</h2>
+		<form method="post">
+			<div class="row col-6">
+				<label asp-for="EmployeeName"></label>
+				<input asp-for="EmployeeName" class="form-control" disabled placeholder="Enter Employee Name" />
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeId"></label>
+				<input asp-for="EmployeeId" class="form-control" disabled placeholder="Enter Employee Id" />
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeDOB"></label>
+				<input asp-for="EmployeeDOB" class="form-control" disabled placeholder="Enter Employee DOB" />
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeMobile"></label>
+				<input asp-for="EmployeeMobile" class="form-control" disabled placeholder="Enter Employee Mobile" />
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeAddress"></label>
+				<input asp-for="EmployeeAddress" class="form-control" disabled placeholder="Enter Employee Address" />
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeJoinDate"></label>
+				<input asp-for="EmployeeJoinDate" class="form-control" disabled placeholder=" Enter Employee JoinDate " />
+			</div>
+			<div class="row col-6">
+				<button class="btn btn-primary mt-2">Delete</button>
+				<a asp-controller="Employee" asp-action="Index" class="btn btn-outline-danger mt-1">Back to List</a>
+			</div>
+		</form>
+	</div>
+
+</div>
+
+
+

@@ -3,6 +3,7 @@
 <div class="container">
 	<div class="row">
 		<h2>Register Page</h2>
+		<partial name="_Notification" />
 		<div>
 
 		</div>
@@ -53,7 +54,19 @@
 				</div>
 				<div class="row">
 					<div class="col-6">
+						<label asp-for="Password"></label>
+						<input asp-for="Password" class="form-control" />
+						<span asp-validation-for="Password" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
 						<button class="btn btn-primary form-control mt-2">Create</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6 m-2">
+						<a asp-action="Login" asp-controller="Register">Already have an account</a>
 					</div>
 				</div>
 

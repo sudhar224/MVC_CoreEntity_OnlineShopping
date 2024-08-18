@@ -101,5 +101,11 @@ namespace OnlineShopping.Controllers
 			List<Product> objproduct = _db.Products.ToList();
 			return View(objproduct);
 		}
+
+		public IActionResult Details(int id)
+		{
+			Product objProduct = _db.Products.FirstOrDefault(u => u.Id==id);
+			return View(objProduct);
+		}
 	}
 }

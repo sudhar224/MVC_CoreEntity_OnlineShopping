@@ -1,0 +1,51 @@
+﻿@using OnlineShopping.Models
+@model Employee
+
+<div class="container">
+	<div class="row">
+		<h2>Create Employee</h2>
+		<form method="post">
+			<div class="row col-6">
+				<label asp-for="EmployeeName"></label>
+				<input asp-for="EmployeeName" class="form-control" placeholder="Enter Employee Name" />
+				<span asp-validation-for="EmployeeName" class="text-danger"></span>
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeId"></label>
+				<input asp-for="EmployeeId" class="form-control" placeholder="Enter Employee Id" />
+				<span asp-validation-for="EmployeeId" class="text-danger"></span>
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeDOB"></label>
+				<input asp-for="EmployeeDOB" class="form-control" placeholder="Enter Employee DOB" />
+				<span asp-validation-for="EmployeeDOB" class="text-danger"></span>
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeMobile"></label>
+				<input asp-for="EmployeeMobile" class="form-control" placeholder="Enter Employee Mobile" />
+				<span asp-validation-for="EmployeeMobile" class="text-danger"></span>
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeAddress"></label>
+				<input asp-for="EmployeeAddress" class="form-control" placeholder="Enter Employee Address" />
+				<span asp-validation-for="EmployeeAddress" class="text-danger"></span>
+			</div>
+			<div class="row col-6">
+				<label asp-for="EmployeeJoinDate"></label>
+				<input asp-for="EmployeeJoinDate" class="form-control" placeholder=" Enter Employee JoinDate " />
+				<span asp-validation-for="EmployeeJoinDate" class="text-danger"></span>
+			</div>
+			<div class="row col-6">
+				<button class="btn btn-primary mt-2">Create</button>
+				<a asp-controller="Employee" asp-action="Index" class="btn btn-outline-danger mt-1">Bact to List</a>
+			</div>
+		</form>
+	</div>
+
+</div>
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
+
