@@ -9,7 +9,7 @@ namespace OnlineShopping.Models
 		[Required]
 		public string ProductName { get; set; }
 		[Required]
-		public string ProductDescription { get; set; }
+        public string ProductDescription { get; set; }
 		[Required]
 		public int ProductCategoryId { get; set; }
 		[Required]
