@@ -22,6 +22,11 @@ namespace OnlineShopping.Controllers
 		}
 		public IActionResult Search(string query)
 		{
+			if(query == null)
+			{
+				List<Product> objProduct = _db.Products.ToList();
+				return View("Index",objProduct);
+			}
 		 
 		   var item = _db.Products.Where(u => u.ProductName.Contains(query) || u.ProductDescription.Contains (query)).ToList();
 			return View("Index",item);

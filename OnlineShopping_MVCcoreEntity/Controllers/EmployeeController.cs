@@ -16,6 +16,18 @@ namespace OnlineShopping.Controllers
            List<Employee> objEmployee = _db.tbl_Employee.ToList();
             return View(objEmployee);
         }
+
+        public IActionResult SearchEmployee(string query)
+        {
+            if(query == null)
+            {
+				List<Employee> objEmployee1 = _db.tbl_Employee.ToList();
+                return View("Index",objEmployee1);
+
+			}
+            List<Employee> objEmployee = _db.tbl_Employee.Where(u => u.EmployeeName.Contains(query)).ToList();
+            return View("Index",objEmployee);
+        }
         public IActionResult Create()
         {
             return View();
