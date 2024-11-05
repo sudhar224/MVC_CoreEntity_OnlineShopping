@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\project folder\OnlineShopping_MVCcoreEntity\OnlineShopping_MVCcoreEntity
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/project folder/OnlineShopping_MVCcoreEntity/OnlineShopping_MVCcoreEntity/Views/Billing/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbGluZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/project folder/OnlineShopping_MVCcoreEntity/OnlineShopping_MVCcoreEntity/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
